@@ -2,10 +2,19 @@
     <div>
         <h1>Linguagens de Programação</h1>
         Qual sua linguagem de programação do seu interesse?<br>
-        <input type="text" placeholder="Ex: Python" id="txt">
+        <input type="text" placeholder="Ex: PHP" id="txt">
         <input type="submit" value="Procurar" id="btn">
         <input type="number" v-model="ano">
-        {{ criador }}, {{ ano }}, {{ descrição }}
+
+        <div class="data">
+            <h4>Linguagem: {{ linguagem }}</h4>
+            <hr>
+            <h4>Descrião: {{ descricao }}</h4>
+            <hr>
+            <h4>Criador: {{ criador }}</h4>
+            <hr>
+            <h4>Ano de Criação: {{ ano }}</h4>
+        </div>
     </div>
 </template>
 
@@ -13,14 +22,19 @@
 export default{
     data() {
         return{
+            linguagem: "Python",
+            descricao: "Lorem Ipsum",
+            criador: "Guido van Rossum",
+            ano: 1989
+
             
         }
     },
-    props: {
-        descrição: String,
-        criador: String,
-        ano: Number
-    }
+    // props: {
+    //     descricao: String,
+    //     criador: String,
+    //     ano: Number
+    // }
     
 }
 </script>
@@ -37,5 +51,12 @@ export default{
     width: 20%;
     height:30px;
     margin-right: 1%;
+}
+.data{
+    background-color:#6999e0; 
+    width: 20%;
+    padding: 1%;
+    margin-top: 1%;
+    margin-left: 1%;
 }
 </style>
