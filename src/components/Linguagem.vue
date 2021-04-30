@@ -22,19 +22,15 @@
 export default{
     data() {
         return{
-            linguagem: "Python",
-            descricao: "Lorem Ipsum",
-            criador: "Guido van Rossum",
-            ano: 1989
-
             
         }
     },
-    // props: {
-    //     descricao: String,
-    //     criador: String,
-    //     ano: Number
-    // }
+     props: {
+        linguagem: String,
+        descricao: String,
+        criador: String,
+        ano: Number
+    }
     
 }
 </script>

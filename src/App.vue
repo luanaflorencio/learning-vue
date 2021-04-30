@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>ProgramaDEV</h1>
-    <Linguagem />
+    <Linguagem linguagem="Python" descricao="Lorem Ipsum" criador="Guido van Rossum" ano="1989"/>
   </div>
   
 </template>
