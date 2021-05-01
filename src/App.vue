@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h1>ProgramaDEV</h1>
-    <Linguagem linguagem="Python" descricao="Lorem Ipsum" criador="Guido van Rossum" ano="1989"/>
+    <input type="text" v-model="boxProg.linguagem">
+    <Linguagem :linguagem="boxProg"/>
   </div>
   
 </template>
@@ -11,6 +12,18 @@ import Linguagem from './components/Linguagem';
 
 export default {
   name: 'App',
+  data() {
+    return{
+      boxProg: {
+      linguagem: "Python",
+      descricao: "Lorem Ipsum",
+      criador: "Guido van Rossum",
+      ano: 1989
+
+      }
+    }
+   
+  },
   components: {
     Linguagem
   }
