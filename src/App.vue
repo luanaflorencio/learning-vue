@@ -2,7 +2,7 @@
   <div id="app">
     <h1>ProgramaDEV</h1>
     <input type="text" v-model="boxProg.linguagem">
-    <Linguagem :linguagem="boxProg"/>
+    <Linguagem :linguagem="boxProg" :showcriador="false"/>
   </div>
   
 </template>

@@ -9,9 +9,10 @@
         <div class="data">
             <h4>Linguagem: {{ linguagem.linguagem }}</h4>
             <hr>
-            <h4>Descrião: {{ linguagem.descricao }}</h4>
+            <h4 v-show="2 > 1">Descrião: {{ linguagem.descricao }}</h4>
             <hr>
-            <h4>Criador: {{ linguagem.criador }}</h4>
+            <h4 v-if="showcriador == true">Criador: {{ linguagem.criador }}</h4>
+            <h4 v-else>Criador Desconhecido!</h4>
             <hr>
             <h4>Ano de Criação: {{ linguagem.ano }}</h4>
         </div>
@@ -26,10 +27,10 @@ export default{
         }
     },
      props: {
-        linguagem: String,
-        descricao: String,
-        criador: String,
-        ano: Number
+        description: Number,
+        showcriador: Boolean,
+        linguagem: Object,
+        
     }
     
 }
