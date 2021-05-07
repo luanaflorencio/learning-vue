@@ -4,10 +4,9 @@
         Qual sua linguagem de programação do seu interesse?<br>
         <input type="text" placeholder="Ex: PHP" id="txt">
         <input type="submit" value="Procurar" id="btn">
-        <input type="number" v-model="linguagem.ano" class="box-ano">
 
         <div class="data">
-            <h4>Linguagem: {{ linguagem.linguagem }}</h4>
+            <h4>Linguagem: {{ linguagem.nome }}</h4>
             <hr>
             <h4 v-show="2 > 1">Descrião: {{ linguagem.descricao }}</h4>
             <hr>
@@ -59,4 +58,5 @@ export default{
 .box-ano{
     margin-left: 1%;
 }
+
 </style>
