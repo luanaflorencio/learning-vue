@@ -6,22 +6,23 @@
     <h2>Cadastrar uma nova Linguagem</h2>
 
     Qual o nome da Linguagem? <br>
-    <input type="text" placeholder="Nome"> <br>
+    <input type="text" placeholder="Nome" v-model="nomeField"> <br>
     Fale um pouco sobre ela: <br>
-    <input type="text" placeholder="Descrição"><br>
+    <input type="text" placeholder="Descrição" v-model="descricaoField"><br>
     Quem é o criador? <br>
-    <input type="text" placeholder="Criador"><br>
+    <input type="text" placeholder="Criador" v-model="criadorField"><br>
     Ano de criação: <br>
-    <input type="number" placeholder="Ano">
+    <input type="number" placeholder="Ano" v-model="anoField">
+    <button @click="novaLinguagem">Cadastrar</button>
 
     <h2>Linguagens de Programação</h2>
   
     <div v-for="linguagem in linguagens" :key="linguagem.id">
       <Linguagem :linguagem="linguagem" :showcriador="true"/>
-      <h3 class="edit">Editar:</h3>
+      <!-- <h3 class="edit">Editar:</h3>
       <input type="text" v-model="linguagem.nome">
       <input type="text" class= "edit2" v-model="linguagem.criador">
-      <input type="number" class="edit3" v-model="linguagem.ano">
+      <input type="number" class="edit3" v-model="linguagem.ano"> -->
     </div>
   </div>
   
@@ -34,16 +35,14 @@ export default {
   name: 'App',
   data() {
     return{
-      boxProg: {
-      nome: "Python",
-      descricao: "Lorem Ipsum",
-      criador: "Guido van Rossum",
-      ano: 1989
+      nomeField: "",
+      descricaoField: "",
+      criadorField: "",
+      anoField: 0,
 
-      },
       linguagens: [
         {
-          id: 1,
+          id: 3,
           nome: "Python",
           descricao: "Lorem Ipsum",
           criador: "Guido van Rossum",
@@ -59,7 +58,7 @@ export default {
 
         },
         {
-          id: 3,
+          id: 5,
           nome: "PHP",
           descricao: "Lorem & Ipsum",
           criador: "Rasmus Lerdorf",
@@ -72,8 +71,18 @@ export default {
   },
   components: {
     Linguagem
+  },
+  methods: {
+    novaLinguagem: function(){
+      this.linguagens.push({nome: this.nomeField, descricao: this.descricaoField, criador: this.criadorField, ano: this.anoField, id: Date.now()});
+      this.nomeField= "";
+      this.descricaoField= "";
+      this.criadorField= "";
+      this.anoField= 0;
+    }
   }
 }
+      
 </script>
 
 <style>
