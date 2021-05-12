@@ -1,9 +1,6 @@
 <template>
     <div>
-        <h1>Linguagens de Programação</h1>
-        Qual sua linguagem de programação do seu interesse?<br>
-        <input type="text" placeholder="Ex: PHP" id="txt">
-        <input type="submit" value="Procurar" id="btn">
+       
 
         <div class="data">
             <h4>Linguagem: {{ linguagem.nome }}</h4>

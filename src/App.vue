@@ -1,6 +1,20 @@
 <template>
   <div id="app">
+
     <h1>ProgramaDEV</h1>
+    
+    <h2>Cadastrar uma nova Linguagem</h2>
+
+    Qual o nome da Linguagem? <br>
+    <input type="text" placeholder="Nome"> <br>
+    Fale um pouco sobre ela: <br>
+    <input type="text" placeholder="Descrição"><br>
+    Quem é o criador? <br>
+    <input type="text" placeholder="Criador"><br>
+    Ano de criação: <br>
+    <input type="number" placeholder="Ano">
+
+    <h2>Linguagens de Programação</h2>
   
     <div v-for="linguagem in linguagens" :key="linguagem.id">
       <Linguagem :linguagem="linguagem" :showcriador="true"/>
@@ -10,8 +24,6 @@
       <input type="number" class="edit3" v-model="linguagem.ano">
     </div>
   </div>
-
-  <!-- midar o nome de linguagem para nome e passar uma margem nas edições -->
   
 </template>
 
