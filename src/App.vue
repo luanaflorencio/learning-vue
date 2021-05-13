@@ -13,7 +13,8 @@
     <input type="text" placeholder="Criador" v-model="criadorField"><br>
     Ano de criação: <br>
     <input type="number" placeholder="Ano" v-model="anoField">
-    <button @click="novaLinguagem">Cadastrar</button>
+    <button @click="novaLinguagem" id="btn">Cadastrar</button><br>
+    <small v-show="invalid" class="erro">Campo de nome e/ou descrição inválido ou não preenchido!</small>
 
     <h2>Linguagens de Programação</h2>
   
@@ -35,6 +36,7 @@ export default {
   name: 'App',
   data() {
     return{
+      invalid: false,
       nomeField: "",
       descricaoField: "",
       criadorField: "",
@@ -74,11 +76,18 @@ export default {
   },
   methods: {
     novaLinguagem: function(){
+      if(this.nomeField == "" || this.nomeField.length < 2 || this.descricaoField == "" || this.descricaoField.length < 6){
+        this.invalid= true;
+      }
+      else{
       this.linguagens.push({nome: this.nomeField, descricao: this.descricaoField, criador: this.criadorField, ano: this.anoField, id: Date.now()});
       this.nomeField= "";
       this.descricaoField= "";
       this.criadorField= "";
       this.anoField= 0;
+      this.invalid= false;
+      }
+      
     }
   }
 }
@@ -91,5 +100,15 @@ export default {
 }
 .edit3{
    margin-left: 1%;
+}
+#btn{
+    background-color: #2760b4;
+    color: white;
+    width: 7%;
+    height: 27px;
+    margin-left:1%;
+}
+.erro{
+  color:red;
 }
 </style>

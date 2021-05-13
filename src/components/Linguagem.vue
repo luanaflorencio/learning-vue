@@ -33,26 +33,11 @@ export default{
 </script>
 
 <style scoped>
-#btn{
-    background-color: #2760b4;
-    color: white;
-    width: 7%;
-    height: 27px;
-}
-
-#txt{
-    width: 20%;
-    height:30px;
-    margin-right: 1%;
-}
 .data{
     background-color:#6999e0; 
     width: 20%;
     padding: 1%;
     margin-top: 1%;
-    margin-left: 1%;
-}
-.box-ano{
     margin-left: 1%;
 }
 
