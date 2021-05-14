@@ -11,6 +11,7 @@
             <h4 v-else>Criador Desconhecido!</h4>
             <hr>
             <h4>Ano de Criação: {{ linguagem.ano }}</h4>
+            <button @click="eventDelete">Excluir</button>
         </div>
     </div>
 </template>
@@ -27,6 +28,12 @@ export default{
         showcriador: Boolean,
         linguagem: Object,
         
+    }, 
+    methods: {
+        eventDelete: function() {
+            console.log("Emitindo");
+            this.$emit("deletando", {idLinguagem: this.linguagem.id});
+        }
     }
     
 }

@@ -19,7 +19,7 @@
     <h2>Linguagens de Programação</h2>
   
     <div v-for="linguagem in linguagens" :key="linguagem.id">
-      <Linguagem :linguagem="linguagem" :showcriador="true"/>
+      <Linguagem :linguagem="linguagem" :showcriador="true" @deletando="deletandoLinguagem($event)"/>
       <!-- <h3 class="edit">Editar:</h3>
       <input type="text" v-model="linguagem.nome">
       <input type="text" class= "edit2" v-model="linguagem.criador">
@@ -88,6 +88,11 @@ export default {
       this.invalid= false;
       }
       
+    },
+    deletandoLinguagem: function($event) {
+      var id = $event.idLinguagem;
+      var reloadArray = this.linguagens.filter(linguagem => linguagem.id != id);
+      this.linguagens = reloadArray;
     }
   }
 }
