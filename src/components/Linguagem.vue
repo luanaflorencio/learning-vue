@@ -3,7 +3,7 @@
        
 
         <div class="data">
-            <h4>Linguagem: {{ linguagem.nome }}</h4>
+            <h4>Linguagem: {{ linguagem.nome | capslkName}}</h4>
             <hr>
             <h4 v-show="2 > 1">Descrião: {{ linguagem.descricao }}</h4>
             <hr>
@@ -33,6 +33,11 @@ export default{
         eventDelete: function() {
             console.log("Emitindo");
             this.$emit("deletando", {idLinguagem: this.linguagem.id});
+        }
+    },
+    filters: {
+        capslkName: function(value){
+            return value.toUpperCase();
         }
     }
     
